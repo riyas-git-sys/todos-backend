@@ -1,6 +1,3 @@
-# Backend README
-
-```markdown
 # Todo API Backend
 
 A FastAPI-based RESTful API for managing todo items with advanced features.
@@ -40,15 +37,19 @@ cd backend
 2. Create virtual environment:
 
 ```python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate```
-
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 3. Install dependencies:
 
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 4. Run locally:
 
-```uvicorn main:app --reload```
+```
+uvicorn main:app --reload
+```
 
 The API will be available at http://localhost:8000
 
@@ -78,13 +79,19 @@ backend/
 ### Deploy to Vercel
 Install Vercel CLI:
 
-```npm install -g vercel```
+```
+npm install -g vercel
+```
 Login to Vercel:
 
-```vercel login```
+```
+vercel login
+```
 Deploy:
 
-```vercel --prod```
+```
+vercel --prod
+```
 ## Manual Setup
 Ensure vercel.json is configured correctly
 
@@ -93,25 +100,34 @@ Make sure requirements.txt includes all dependencies
 Deploy using Vercel CLI or connect GitHub repository
 
 ## 📊 API Usage Examples
-### Create a Todo
-
-```curl -X POST "https://todos-backend-eta.vercel.app/todos" \
+Create a Todo
+```
+curl -X POST "https://todos-backend-eta.vercel.app/todos" \
   -H "Content-Type: application/json" \
   -d '{"task": "Buy groceries", "priority": 3}'
-Get All Todos```
+```
 
-```curl "https://todos-backend-eta.vercel.app/todos"
-Get Completed Todos```
+Get All Todos
+```
+curl "https://todos-backend-eta.vercel.app/todos"
+Get Completed Todos
+```
 
-```curl "https://todos-backend-eta.vercel.app/todos?completed=true"
-Update a Todo```
+```
+curl "https://todos-backend-eta.vercel.app/todos?completed=true"
+Update a Todo
+```
 
-```curl -X PUT "https://todos-backend-eta.vercel.app/todos/{id}" \
+```
+curl -X PUT "https://todos-backend-eta.vercel.app/todos/{id}" \
   -H "Content-Type: application/json" \
-  -d '{"completed": true, "priority": 2}'```
+  -d '{"completed": true, "priority": 2}'
+```
 Get Statistics
 
-```curl "https://todos-backend-eta.vercel.app/stats"```
+```
+curl "https://todos-backend-eta.vercel.app/stats"
+```
 
 ## 🔒 CORS Configuration
 The API is configured to allow requests from:
@@ -122,14 +138,17 @@ http://localhost:3000 (for development)
 
 ## 📝 Data Models
 TodoCreate
-```json
+```
+json
 {
   "task": "string",
   "priority": 1,
   "due_date": "2023-12-31T23:59:59"
-}```
+}
+```
 TodoItem
-```json
+```
+json
 {
   "id": "uuid-string",
   "task": "string",
@@ -138,7 +157,8 @@ TodoItem
   "due_date": "2023-12-31T23:59:59",
   "created_at": "2023-01-01T00:00:00",
   "updated_at": "2023-01-01T00:00:00"
-}```
+}
+```
 ## ⚠️ Limitations
 In-memory storage: Data is not persisted between deployments
 
